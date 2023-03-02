@@ -16,7 +16,7 @@
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(documento),
     };
-    fetch(URL.articulos, opciones)
+    fetch(URL.armas, opciones)
       .then((res) => res.json())
       .then((dato) => ($data = [...$data, dato]))
       .catch((error) => console.log(error));
@@ -28,7 +28,7 @@
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(documento),
     };
-    fetch(URL.articulos + documento._id, opciones)
+    fetch(URL.armas + documento._id, opciones)
       .then((res) => res.json())
       .then((dato) => console.log(dato))
       .catch((error) => console.log(error));
@@ -38,7 +38,7 @@
     let opciones = {
       method: "DELETE",
     };
-    fetch(URL.articulos + documento._id, opciones)
+    fetch(URL.armas + documento._id, opciones)
       .then((res) => res.json())
       .then((dato) => ($data = $data.filter((doc) => doc._id != dato._id)))
       .catch((error) => console.log(error));
