@@ -1,13 +1,12 @@
 <script>
   export let arma = {
-    _id: "",
-    Nombre: "",
-    Tipo: 0,
+    nombre: "",
+    tipo: "",
   };
 </script>
 
-<input type="text" id="Nombre" placeholder="Nombre" bind:value={arma.Nombre} />
-<input type="text" id="Tipo" placeholder="Tipo" bind:value={arma.Tipo} />
+<input type="text" placeholder="Nombre" bind:value={arma.nombre} />
+<input type="text" placeholder="Tipo" bind:value={arma.tipo} />
 <slot />
 
 <style></style>

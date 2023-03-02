@@ -8,7 +8,7 @@
 
   const URL = getContext("URL");
 
-  let armasInsertar = {};
+  let armaInsertada = {};
   let datosFiltrados = [];
   let patron;
   let getArmas = async () => {
@@ -18,8 +18,8 @@
 
   onMount(getArmas);
 
-  $: datosFiltrados = $data.filter((armas) =>
-    RegExp(patron, "i").test(armas.nombre)
+  $: datosFiltrados = $data.filter((arma) =>
+    RegExp(patron, "i").test(arma.nombre)
   );
 </script>
 
@@ -27,8 +27,8 @@
 
 <h1>Esta en la Armeria</h1>
 
-<Arma bind:arma={armasInsertar}>
-  <Boton tipo="insertar" documento={armasInsertar} />
+<Arma bind:arma={armaInsertada}>
+  <Boton tipo="insertar" documento={armaInsertada} coleccion="armas" />
 </Arma>
 <hr />
 <section class="listaArmas">
@@ -36,8 +36,8 @@
     <div>
       <Arma bind:arma>
         <br />
-        <Boton tipo="modificar" documento={arma} />
-        <Boton tipo="eliminar" documento={arma} />
+        <Boton tipo="modificar" documento={arma} coleccion="armas" />
+        <Boton tipo="eliminar" documento={arma} coleccion="armas" />
       </Arma>
     </div>
   {/each}

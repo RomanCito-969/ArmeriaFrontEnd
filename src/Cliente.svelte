@@ -1,28 +1,17 @@
 <script>
   export let cliente = {
-    Nombre: "",
-    Apellidos: "",
-    Num_Armas: 0,
+    nombre: "",
+    apellidos: "",
+    num_armas: 0,
   };
 </script>
 
+<input type="text" placeholder="Nombre" bind:value={cliente.nombre} />
+<input type="text" placeholder="Apellidos" bind:value={cliente.apellidos} />
 <input
-  type="text"
-  id="Nombre"
-  placeholder="Nombre"
-  bind:value={cliente.Nombre}
-/>
-<input
-  type="text"
-  id="Apellidos"
-  placeholder="Apellidos"
-  bind:value={cliente.Apellidos}
-/>
-<input
-  type="Number"
-  id="Num_Armas"
+  type="number"
   placeholder="Número de Armas"
-  bind:value={cliente.Num_Armas}
+  bind:value={cliente.num_armas}
 />
 <slot />
 

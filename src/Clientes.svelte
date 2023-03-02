@@ -28,7 +28,7 @@
 <h1>Esta en los Clientes.</h1>
 
 <Cliente bind:cliente={clietInsertar}>
-  <Boton tipo="insertar" documento={clietInsertar} />
+  <Boton tipo="insertar" documento={clietInsertar} coleccion="clientes" />
 </Cliente>
 <hr />
 <section class="listaAticulos">
@@ -36,8 +36,8 @@
     <div>
       <Cliente bind:cliente>
         <br />
-        <Boton tipo="modificar" documento={cliente} />
-        <Boton tipo="eliminar" documento={cliente} />
+        <Boton tipo="modificar" documento={cliente} coleccion="clientes" />
+        <Boton tipo="eliminar" documento={cliente} coleccion="clientes" />
       </Cliente>
     </div>
   {/each}
@@ -45,4 +45,9 @@
 <hr />
 
 <style>
+  .listaAticulos {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 5px;
+  }
 </style>
