@@ -25,29 +25,30 @@
 
 <Buscar bind:busqueda={patron} />
 
-<h1>Esta en la Armeria</h1>
+<h1 class="text-white">Esta en la Armeria</h1>
 
 <Arma bind:arma={armaInsertada}>
   <Boton tipo="insertar" documento={armaInsertada} coleccion="armas" />
 </Arma>
 <hr />
-<section class="listaArmas">
-  {#each datosFiltrados as arma}
-    <div>
-      <Arma bind:arma>
-        <br />
-        <Boton tipo="modificar" documento={arma} coleccion="armas" />
-        <Boton tipo="eliminar" documento={arma} coleccion="armas" />
-      </Arma>
-    </div>
-  {/each}
-</section>
+<div class="container">
+  <section class=" row row-cols-1 row-cols-md-3  row-col-lg-4 g-2">
+    {#each datosFiltrados as arma}
+      <div class="col">
+        <div class="card text-white bg-secondary mb-3 border-info ">
+          <Arma bind:arma>
+            <br />
+            <div class="container-fluid " role="group">
+              <Boton tipo="modificar" documento={arma} coleccion="armas" />
+              <Boton tipo="eliminar" documento={arma} coleccion="armas" />
+            </div>
+          </Arma>
+        </div>
+      </div>
+    {/each}
+  </section>
+</div>
 <hr />
 
 <style>
-  .listaArmas {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 5px;
-  }
 </style>

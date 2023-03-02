@@ -25,29 +25,28 @@
 
 <Buscar bind:busqueda={patron} />
 
-<h1>Esta en los Clientes.</h1>
+<h1 class="text-white">Esta en los Clientes.</h1>
 
 <Cliente bind:cliente={clietInsertar}>
   <Boton tipo="insertar" documento={clietInsertar} coleccion="clientes" />
 </Cliente>
 <hr />
-<section class="listaAticulos">
-  {#each datosFiltrados as cliente}
-    <div>
-      <Cliente bind:cliente>
-        <br />
-        <Boton tipo="modificar" documento={cliente} coleccion="clientes" />
-        <Boton tipo="eliminar" documento={cliente} coleccion="clientes" />
-      </Cliente>
-    </div>
-  {/each}
-</section>
+<div class="container">
+  <section class=" row row-cols-1 row-cols-md-3  row-col-lg-4 g-1">
+    {#each datosFiltrados as cliente}
+      <div class="col">
+        <div class="card text-white bg-secondary mb-3 border-info ">
+          <Cliente bind:cliente>
+            <br />
+            <Boton tipo="modificar" documento={cliente} coleccion="clientes" />
+            <Boton tipo="eliminar" documento={cliente} coleccion="clientes" />
+          </Cliente>
+        </div>
+      </div>
+    {/each}
+  </section>
+</div>
 <hr />
 
 <style>
-  .listaAticulos {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 5px;
-  }
 </style>

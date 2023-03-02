@@ -71,4 +71,9 @@
   onMount(setUp);
 </script>
 
-<input type="button" value={tipo.toLocaleUpperCase()} on:click={handler} />
+<input
+  type="button"
+  class="bg-transparent text-white"
+  value={tipo.toLocaleUpperCase()}
+  on:click={handler}
+/>
