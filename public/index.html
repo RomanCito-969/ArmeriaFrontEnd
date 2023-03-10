@@ -18,6 +18,7 @@
 
     <!-- PWA: Para habilitar Progressive Web Application -->
     <link rel="manifest" href="manifest.json" />
+
     <!-- PWA: Añadir a pantalla de inicio para Safari en iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -40,6 +41,9 @@
   </head>
 
   <body>
+    <noscript>
+      <p>Este sitio necesita Javascript para funcionar.</p>
+    </noscript>
     <script>
       // Si está soportado serviceWorker por el navegador
       if ("serviceWorker" in navigator) {
